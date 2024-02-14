@@ -16,6 +16,8 @@ bool SceneIngame::init()
 {
     if (!Scene::init()) return false;
 
+    srand(time(0));
+
     Director::getInstance()->getTextureCache()->addImage("res/match3_tiles_px.png");
     
     //onEnter()처럼 다형성으로 함수가 호출되는 것이 아닌, std::bind()를 통해 콜백함수를 등록하는 방식, 오버라이드 처럼 꼭 함수명 통일 시킬 필요는 없음
@@ -49,7 +51,7 @@ void SceneIngame::initGame()
     {
         for (int k = 0; k < BLOCK_VERTICAL; k++)
         {
-            createBlock(i, k, 1);
+            createBlock(i, k, rand() % 4 + 1);
         }
     }
     this->alignBlockSprite();
@@ -116,7 +118,7 @@ void SceneIngame::loseGame()
 void SceneIngame::createBlock(int x, int y, int type)
 {
     auto cache = Director::getInstance()->getTextureCache();
-    auto spr = Sprite::createWithTexture(cache->getTextureForKey("res/match3_tiles_px.png"), Rect(0, 0, 40, 40));
+    auto spr = Sprite::createWithTexture(cache->getTextureForKey("res/match3_tiles_px.png"), Rect(0 + (type * 40), 0, 40, 40));
     //spr->setScale(2);
     addChild(spr);
     setBlockData(x, y, type);
