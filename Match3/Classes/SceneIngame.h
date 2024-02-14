@@ -39,6 +39,7 @@ private:
 	Sprite* blockSprite[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
 
 	void createBlock(int x, int y, int type);
+	void createBlockRand(int x, int y);
 	int getBlockData(int x, int y);
 	void setBlockData(int x, int y, int type);
 	Sprite* getBlockSprite(int x, int y);
