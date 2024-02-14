@@ -1,0 +1,355 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:30 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:30 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      .NET Framework용 Microsoft (R) Build Engine 버전 16.11.2+f32259642
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      빌드 시작: 2024-02-07 오후 12:05:02
+      1 노드의 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\3.28.2\\CompilerIdC\\CompilerIdC.vcxproj" 프로젝트(기본 대상)입니다.
+      PrepareForBuild:
+        "Debug\\" 디렉터리를 만들고 있습니다.
+        "Debug\\Match3.tlog\\" 디렉터리를 만들고 있습니다.
+      InitializeBuildStatus:
+        "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\\Match3.tlog\\unsuccessfulbuild"을(를) 만들고 있습니다.
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc140.pdb" /Gd /TC /analyze- /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\link.exe /ERRORREPORT:QUEUE /OUT:".\\Match3.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\Match3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\Match3.lib" /MACHINE:X86 /SAFESEH Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\3.28.2\\CompilerIdC\\.\\Match3.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\cl.exe
+      FinalizeBuildStatus:
+        "Debug\\Match3.tlog\\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+        "Debug\\Match3.tlog\\Match3.lastbuildstate"에 연결(touching)하고 있습니다.
+      "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\3.28.2\\CompilerIdC\\CompilerIdC.vcxproj" 프로젝트를 빌드했습니다(기본 대상).
+      
+      빌드했습니다.
+          경고 0개
+          오류 0개
+      
+      경과 시간: 00:00:00.85
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "Match3.exe"
+      
+      The C compiler identification could not be found in:
+        C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/3.28.2/CompilerIdC/CompilerIdC.vcxproj
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/3.28.2/CompilerIdC/Match3.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:30 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      .NET Framework용 Microsoft (R) Build Engine 버전 16.11.2+f32259642
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      빌드 시작: 2024-02-07 오후 12:05:04
+      1 노드의 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\3.28.2\\CompilerIdCXX\\CompilerIdCXX.vcxproj" 프로젝트(기본 대상)입니다.
+      PrepareForBuild:
+        "Debug\\" 디렉터리를 만들고 있습니다.
+        "Debug\\Match3.tlog\\" 디렉터리를 만들고 있습니다.
+      InitializeBuildStatus:
+        "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\\Match3.tlog\\unsuccessfulbuild"을(를) 만들고 있습니다.
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc140.pdb" /Gd /TP /analyze- /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\link.exe /ERRORREPORT:QUEUE /OUT:".\\Match3.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\Match3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\Match3.lib" /MACHINE:X86 /SAFESEH Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\3.28.2\\CompilerIdCXX\\.\\Match3.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\cl.exe
+      FinalizeBuildStatus:
+        "Debug\\Match3.tlog\\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+        "Debug\\Match3.tlog\\Match3.lastbuildstate"에 연결(touching)하고 있습니다.
+      "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\3.28.2\\CompilerIdCXX\\CompilerIdCXX.vcxproj" 프로젝트를 빌드했습니다(기본 대상).
+      
+      빌드했습니다.
+          경고 0개
+          오류 0개
+      
+      경과 시간: 00:00:00.69
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "Match3.exe"
+      
+      The CXX compiler identification could not be found in:
+        C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/3.28.2/CompilerIdCXX/CompilerIdCXX.vcxproj
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/3.28.2/CompilerIdCXX/Match3.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:30 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-1n5bze"
+      binary: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-1n5bze"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-1n5bze'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_db954.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=16.0 /v:n
+        .NET Framework용 Microsoft (R) Build Engine 버전 16.11.2+f32259642
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        빌드 시작: 2024-02-07 오후 12:05:05
+        1 노드의 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-1n5bze\\cmTC_db954.vcxproj" 프로젝트(기본 대상)입니다.
+        PrepareForBuild:
+          "cmTC_db954.dir\\Debug\\" 디렉터리를 만들고 있습니다.
+          "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-1n5bze\\Debug\\" 디렉터리를 만들고 있습니다.
+          "cmTC_db954.dir\\Debug\\cmTC_db954.tlog\\" 디렉터리를 만들고 있습니다.
+        InitializeBuildStatus:
+          "AlwaysCreate"이(가) 지정되었기 때문에 "cmTC_db954.dir\\Debug\\cmTC_db954.tlog\\unsuccessfulbuild"을(를) 만들고 있습니다.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_db954.dir\\Debug\\\\" /Fd"cmTC_db954.dir\\Debug\\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24247.2 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          
+          cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_db954.dir\\Debug\\\\" /Fd"cmTC_db954.dir\\Debug\\vc140.pdb" /Gd /TC /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+          
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-1n5bze\\Debug\\cmTC_db954.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-1n5bze/Debug/cmTC_db954.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-1n5bze/Debug/cmTC_db954.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_db954.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_db954.vcxproj -> C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-1n5bze\\Debug\\cmTC_db954.exe
+          cmTC_db954.vcxproj -> C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-1n5bze/Debug/cmTC_db954.pdb (Full PDB)
+        FinalizeBuildStatus:
+          "cmTC_db954.dir\\Debug\\cmTC_db954.tlog\\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+          "cmTC_db954.dir\\Debug\\cmTC_db954.tlog\\cmTC_db954.lastbuildstate"에 연결(touching)하고 있습니다.
+        "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-1n5bze\\cmTC_db954.vcxproj" 프로젝트를 빌드했습니다(기본 대상).
+        
+        빌드했습니다.
+            경고 0개
+            오류 0개
+        
+        경과 시간: 00:00:00.81
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:30 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-3z88l1"
+      binary: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-3z88l1"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-3z88l1'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_b029d.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=16.0 /v:n
+        .NET Framework용 Microsoft (R) Build Engine 버전 16.11.2+f32259642
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        빌드 시작: 2024-02-07 오후 12:05:07
+        1 노드의 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-3z88l1\\cmTC_b029d.vcxproj" 프로젝트(기본 대상)입니다.
+        PrepareForBuild:
+          "cmTC_b029d.dir\\Debug\\" 디렉터리를 만들고 있습니다.
+          "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-3z88l1\\Debug\\" 디렉터리를 만들고 있습니다.
+          "cmTC_b029d.dir\\Debug\\cmTC_b029d.tlog\\" 디렉터리를 만들고 있습니다.
+        InitializeBuildStatus:
+          "AlwaysCreate"이(가) 지정되었기 때문에 "cmTC_b029d.dir\\Debug\\cmTC_b029d.tlog\\unsuccessfulbuild"을(를) 만들고 있습니다.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b029d.dir\\Debug\\\\" /Fd"cmTC_b029d.dir\\Debug\\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24247.2 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          
+          CMakeCXXCompilerABI.cpp
+          cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_b029d.dir\\Debug\\\\" /Fd"cmTC_b029d.dir\\Debug\\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-3z88l1\\Debug\\cmTC_b029d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-3z88l1/Debug/cmTC_b029d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-3z88l1/Debug/cmTC_b029d.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_b029d.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_b029d.vcxproj -> C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-3z88l1\\Debug\\cmTC_b029d.exe
+          cmTC_b029d.vcxproj -> C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-3z88l1/Debug/cmTC_b029d.pdb (Full PDB)
+        FinalizeBuildStatus:
+          "cmTC_b029d.dir\\Debug\\cmTC_b029d.tlog\\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+          "cmTC_b029d.dir\\Debug\\cmTC_b029d.tlog\\cmTC_b029d.lastbuildstate"에 연결(touching)하고 있습니다.
+        "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-3z88l1\\cmTC_b029d.vcxproj" 프로젝트를 빌드했습니다(기본 대상).
+        
+        빌드했습니다.
+            경고 0개
+            오류 0개
+        
+        경과 시간: 00:00:00.82
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:34 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:84 (_record_compiler_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake:121 (_record_compiler_features_cxx)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake:70 (cmake_record_cxx_compile_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:70 (CMAKE_DETERMINE_COMPILE_FEATURES)"
+      - "CMakeLists.txt:30 (project)"
+    checks:
+      - "Detecting CXX compile features"
+    directories:
+      source: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-cobbrt"
+      binary: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-cobbrt"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_CXX_FEATURE_TEST"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-cobbrt'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_d19f0.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=16.0 /v:n
+        .NET Framework용 Microsoft (R) Build Engine 버전 16.11.2+f32259642
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        빌드 시작: 2024-02-07 오후 12:05:08
+        1 노드의 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-cobbrt\\cmTC_d19f0.vcxproj" 프로젝트(기본 대상)입니다.
+        PrepareForBuild:
+          "cmTC_d19f0.dir\\Debug\\" 디렉터리를 만들고 있습니다.
+          "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-cobbrt\\Debug\\" 디렉터리를 만들고 있습니다.
+          "cmTC_d19f0.dir\\Debug\\cmTC_d19f0.tlog\\" 디렉터리를 만들고 있습니다.
+        InitializeBuildStatus:
+          "AlwaysCreate"이(가) 지정되었기 때문에 "cmTC_d19f0.dir\\Debug\\cmTC_d19f0.tlog\\unsuccessfulbuild"을(를) 만들고 있습니다.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d19f0.dir\\Debug\\\\" /Fd"cmTC_d19f0.dir\\Debug\\vc140.pdb" /Gd /TP /analyze- /errorReport:queue  -std:c++14 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-cobbrt\\feature_tests.cxx"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24247.2 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          
+          feature_tests.cxx
+          cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d19f0.dir\\Debug\\\\" /Fd"cmTC_d19f0.dir\\Debug\\vc140.pdb" /Gd /TP /analyze- /errorReport:queue  -std:c++14 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-cobbrt\\feature_tests.cxx"
+          
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-cobbrt\\Debug\\cmTC_d19f0.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-cobbrt/Debug/cmTC_d19f0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-cobbrt/Debug/cmTC_d19f0.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_d19f0.dir\\Debug\\feature_tests.obj
+          cmTC_d19f0.vcxproj -> C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-cobbrt\\Debug\\cmTC_d19f0.exe
+          cmTC_d19f0.vcxproj -> C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-cobbrt/Debug/cmTC_d19f0.pdb (Full PDB)
+        FinalizeBuildStatus:
+          "cmTC_d19f0.dir\\Debug\\cmTC_d19f0.tlog\\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+          "cmTC_d19f0.dir\\Debug\\cmTC_d19f0.tlog\\cmTC_d19f0.lastbuildstate"에 연결(touching)하고 있습니다.
+        "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-cobbrt\\cmTC_d19f0.vcxproj" 프로젝트를 빌드했습니다(기본 대상).
+        
+        빌드했습니다.
+            경고 0개
+            오류 0개
+        
+        경과 시간: 00:00:00.79
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:34 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:84 (_record_compiler_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake:129 (_record_compiler_features_cxx)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake:70 (cmake_record_cxx_compile_features)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:70 (CMAKE_DETERMINE_COMPILE_FEATURES)"
+      - "CMakeLists.txt:30 (project)"
+    checks:
+      - "Detecting CXX compile features"
+    directories:
+      source: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-vlkhkw"
+      binary: "C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-vlkhkw"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:X86"
+    buildResult:
+      variable: "CMAKE_CXX_FEATURE_TEST"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-vlkhkw'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe" cmTC_74d82.vcxproj /p:Configuration=Debug /p:Platform=Win32 /p:VisualStudioVersion=16.0 /v:n
+        .NET Framework용 Microsoft (R) Build Engine 버전 16.11.2+f32259642
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        빌드 시작: 2024-02-07 오후 12:05:09
+        1 노드의 "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-vlkhkw\\cmTC_74d82.vcxproj" 프로젝트(기본 대상)입니다.
+        PrepareForBuild:
+          "cmTC_74d82.dir\\Debug\\" 디렉터리를 만들고 있습니다.
+          "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-vlkhkw\\Debug\\" 디렉터리를 만들고 있습니다.
+          "cmTC_74d82.dir\\Debug\\cmTC_74d82.tlog\\" 디렉터리를 만들고 있습니다.
+        InitializeBuildStatus:
+          "AlwaysCreate"이(가) 지정되었기 때문에 "cmTC_74d82.dir\\Debug\\cmTC_74d82.tlog\\unsuccessfulbuild"을(를) 만들고 있습니다.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_74d82.dir\\Debug\\\\" /Fd"cmTC_74d82.dir\\Debug\\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-vlkhkw\\feature_tests.cxx"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24247.2 for x86
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          
+          cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_74d82.dir\\Debug\\\\" /Fd"cmTC_74d82.dir\\Debug\\vc140.pdb" /Gd /TP /analyze- /errorReport:queue "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-vlkhkw\\feature_tests.cxx"
+          
+          feature_tests.cxx
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\amd64_x86\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-vlkhkw\\Debug\\cmTC_74d82.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-vlkhkw/Debug/cmTC_74d82.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-vlkhkw/Debug/cmTC_74d82.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_74d82.dir\\Debug\\feature_tests.obj
+          cmTC_74d82.vcxproj -> C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-vlkhkw\\Debug\\cmTC_74d82.exe
+          cmTC_74d82.vcxproj -> C:/Users/SonByeongguk/WT/Cocos2d-x 10CloneCoding(10CC)/Match3/Win32-Build/CMakeFiles/CMakeScratch/TryCompile-vlkhkw/Debug/cmTC_74d82.pdb (Full PDB)
+        FinalizeBuildStatus:
+          "cmTC_74d82.dir\\Debug\\cmTC_74d82.tlog\\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+          "cmTC_74d82.dir\\Debug\\cmTC_74d82.tlog\\cmTC_74d82.lastbuildstate"에 연결(touching)하고 있습니다.
+        "C:\\Users\\SonByeongguk\\WT\\Cocos2d-x 10CloneCoding(10CC)\\Match3\\Win32-Build\\CMakeFiles\\CMakeScratch\\TryCompile-vlkhkw\\cmTC_74d82.vcxproj" 프로젝트를 빌드했습니다(기본 대상).
+        
+        빌드했습니다.
+            경고 0개
+            오류 0개
+        
+        경과 시간: 00:00:00.82
+        
+      exitCode: 0
+...
