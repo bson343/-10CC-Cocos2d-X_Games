@@ -87,7 +87,7 @@ bool SceneIngame::onTouchBeganTest(Touch* t, Event* e)
 
     CCLOG("%f, %f", p.x, p.y);
     destroyBlock(p.x, p.y);
-
+    dropBlocks(p.x);
     return true;
 }
 
@@ -113,6 +113,71 @@ void SceneIngame::winGame()
 
 void SceneIngame::loseGame()
 {
+}
+
+int SceneIngame::findEmptyBlockYIndex(int x, int y)
+{
+    for (int i = y; i < BLOCK_VERTICAL; i++)
+    {
+        auto block = getBlockData(x, i);
+        
+        if (block == 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int SceneIngame::findFilledBlockYIndex(int x, int y)
+{
+    for (int i = y; i < BLOCK_VERTICAL; i++)
+    {
+        auto block = getBlockData(x, i);
+
+        if (block != 0)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void SceneIngame::dropBlocks(int x)
+{
+    for (int i = 0; i < BLOCK_VERTICAL; i++)
+    {
+        auto empty_y = findEmptyBlockYIndex(x, i);
+
+        if (empty_y == -1)
+        {
+            continue;
+        }
+
+        auto filled_y = findFilledBlockYIndex(x, empty_y + 1);
+
+        if (filled_y == -1)
+        {
+            continue;
+        }
+
+        {
+            auto emptyBlockData = getBlockData(x, empty_y);
+            auto filledBlockData = getBlockData(x, filled_y);
+
+            setBlockData(x, empty_y, filledBlockData);
+            setBlockData(x, filled_y, emptyBlockData);
+        }
+
+        {
+            auto emptyBlockSprite = getBlockSprite(x, empty_y);
+            auto filledBlockSprite = getBlockSprite(x, filled_y);
+
+            setBlockSprite(x, empty_y, filledBlockSprite);
+            setBlockSprite(x, filled_y, emptyBlockSprite);
+        }
+    }
+    alignBlockSprite();
 }
 
 void SceneIngame::createBlock(int x, int y, int type)

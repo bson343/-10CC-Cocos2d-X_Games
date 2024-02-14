@@ -29,6 +29,10 @@ public:
 	void winGame();
 	void loseGame();
 
+	int findEmptyBlockYIndex(int x, int y);
+	int findFilledBlockYIndex(int x, int y);
+	void dropBlocks(int x);
+
 private:
 	GameState state;
 	int blockData[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
