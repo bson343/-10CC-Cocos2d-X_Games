@@ -32,11 +32,18 @@ public:
 	int findEmptyBlockYIndex(int x, int y);
 	int findFilledBlockYIndex(int x, int y);
 	void dropBlocks(int x);
+	void dropBlocks();
+
+	bool confirmMatch3Over(int x, int y);
+
+	void checkSameBlockRecursive(int x, int y, int blockType);
 
 private:
 	GameState state;
 	int blockData[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
 	Sprite* blockSprite[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
+
+	int blockCheckedList[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
 
 	void createBlock(int x, int y, int type);
 	void createBlockRand(int x, int y);
@@ -48,6 +55,14 @@ private:
 
 	Vec2 convertGameCoordToBlockCoord(Vec2 gameCoord);
 	Vec2 convertBlockCoordToGameCoord(Vec2 blockCoord);
+
+	void clearCheckedList();
+	void checkCheckedList(int x, int y);
+	int getCheckedList(int x, int y);
+	int isMatch3();
+	void destroyBlocksForCheckedList();
+
+	void fullFillEmptyBlocks();
 };
 #endif // !__SCENE_INGAME_H__
 

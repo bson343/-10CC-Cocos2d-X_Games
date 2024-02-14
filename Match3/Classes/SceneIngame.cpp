@@ -86,8 +86,14 @@ bool SceneIngame::onTouchBeganTest(Touch* t, Event* e)
     Vec2 p = convertGameCoordToBlockCoord(t->getLocation());
 
     CCLOG("%f, %f", p.x, p.y);
-    destroyBlock(p.x, p.y);
-    dropBlocks(p.x);
+
+    if (confirmMatch3Over(p.x, p.y))
+        destroyBlocksForCheckedList();
+
+    dropBlocks();
+    fullFillEmptyBlocks();
+
+    alignBlockSprite();
     return true;
 }
 
@@ -177,7 +183,49 @@ void SceneIngame::dropBlocks(int x)
             setBlockSprite(x, filled_y, emptyBlockSprite);
         }
     }
-    alignBlockSprite();
+    //alignBlockSprite();
+}
+
+void SceneIngame::dropBlocks()
+{
+    for (int x = 0; x < BLOCK_HORIZONTAL; x++)
+    {
+        dropBlocks(x);
+    }
+}
+
+bool SceneIngame::confirmMatch3Over(int x, int y)
+{
+    int comfirmBlockType = getBlockData(x, y);
+    
+    clearCheckedList();
+    checkSameBlockRecursive(x, y, comfirmBlockType);
+
+    if (!isMatch3())
+    {
+        clearCheckedList();
+        return false;
+    }
+
+    return true;
+}
+
+void SceneIngame::checkSameBlockRecursive(int x, int y, int blockType)
+{
+    if (!(x >= 0 && x < BLOCK_HORIZONTAL) || !(y >= 0 && y < BLOCK_VERTICAL))
+    {
+        return;
+    }
+
+    if (getBlockData(x, y) != blockType || getCheckedList(x, y) != 0)
+        return ;
+
+    checkCheckedList(x, y);
+
+    checkSameBlockRecursive(x - 1, y, blockType);
+    checkSameBlockRecursive(x + 1, y, blockType);
+    checkSameBlockRecursive(x, y - 1, blockType);
+    checkSameBlockRecursive(x, y + 1, blockType);
 }
 
 void SceneIngame::createBlock(int x, int y, int type)
@@ -259,4 +307,83 @@ Vec2 SceneIngame::convertBlockCoordToGameCoord(Vec2 blockCoord)
         - Vec2((BLOCK_HORIZONTAL * BLOCK_WIDTH) / 2, (BLOCK_VERTICAL * BLOCK_HEIGHT) / 2)
         + Vec2(BLOCK_WIDTH, BLOCK_HEIGHT) / 2;
     return blockOrigin + Vec2(BLOCK_WIDTH * blockCoord.x, BLOCK_HEIGHT * blockCoord.y);
+}
+
+void SceneIngame::clearCheckedList()
+{
+    for (int i = 0; i < BLOCK_HORIZONTAL; i++)
+    {
+        for (int j = 0; j < BLOCK_VERTICAL; j++)
+        {
+            blockCheckedList[j][i] = 0;
+        }
+    }
+}
+
+void SceneIngame::checkCheckedList(int x, int y)
+{
+    blockCheckedList[y][x] = 1;
+}
+
+int SceneIngame::getCheckedList(int x, int y)
+{
+    return blockCheckedList[y][x];
+}
+
+int SceneIngame::isMatch3()
+{
+    int count = 0;
+    
+    for (int x = 0; x < BLOCK_HORIZONTAL; x++)
+    {
+        count = 0;
+
+        for (int y = 0; y < BLOCK_VERTICAL; y++)
+        {
+            if (getCheckedList(x, y) != 0)
+                count++;
+        }
+
+        if (count >= 3)
+            return 1;
+    }
+
+    for (int y = 0; y < BLOCK_VERTICAL; y++)
+    {
+        count = 0;
+
+        for (int x = 0; x < BLOCK_HORIZONTAL; x++)
+        {
+            if (getCheckedList(x, y) != 0)
+                count++;
+        }
+
+        if (count >= 3)
+            return 1;
+    }
+    return 0;
+}
+
+void SceneIngame::destroyBlocksForCheckedList()
+{
+    for (int x = 0; x < BLOCK_HORIZONTAL; x++)
+    {
+        for (int y = 0; y < BLOCK_VERTICAL; y++)
+        {
+            if (getCheckedList(x, y) != 0)
+                destroyBlock(x, y);
+        }
+    }
+}
+
+void SceneIngame::fullFillEmptyBlocks()
+{
+    for (int x = 0; x < BLOCK_HORIZONTAL; x++)
+    {
+        for (int y = 0; y < BLOCK_VERTICAL; y++)
+        {
+            if (getBlockData(x, y) == 0)
+                createBlockRand(x, y);
+        }
+    }
 }
