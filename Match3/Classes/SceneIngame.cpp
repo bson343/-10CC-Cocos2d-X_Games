@@ -198,8 +198,7 @@ bool SceneIngame::confirmMatch3Over(int x, int y)
 {
     int comfirmBlockType = getBlockData(x, y);
     
-    clearCheckedList();
-    checkSameBlockRecursive(x, y, comfirmBlockType);
+    checkSameBlock(x, y, comfirmBlockType);
 
     if (!isMatch3())
     {
@@ -208,6 +207,13 @@ bool SceneIngame::confirmMatch3Over(int x, int y)
     }
 
     return true;
+}
+
+
+void SceneIngame::checkSameBlock(int x, int y, int blockType)
+{
+    clearCheckedList();
+    checkSameBlockRecursive(x, y, blockType);
 }
 
 void SceneIngame::checkSameBlockRecursive(int x, int y, int blockType)
@@ -274,7 +280,17 @@ void SceneIngame::destroyBlock(int x, int y)
     if (blockData[y][x] == 0)
         return;
 
-    blockSprite[y][x]->removeFromParent();
+    blockSprite[y][x]->runAction(
+        Sequence::create(
+            FadeOut::create(0.125f),
+            FadeIn::create(0.125f),
+            FadeOut::create(0.125f),
+            FadeIn::create(0.125f),
+            Spawn::create(ScaleTo::create(0.125f, 0.0), FadeOut::create(0.125f), nullptr),
+            RemoveSelf::create(),
+            nullptr
+        )
+    );
     blockSprite[y][x] = nullptr;
     blockData[y][x] = 0;
 }

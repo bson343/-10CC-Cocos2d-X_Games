@@ -36,6 +36,7 @@ public:
 
 	bool confirmMatch3Over(int x, int y);
 
+	void checkSameBlock(int x, int y, int blockType);
 	void checkSameBlockRecursive(int x, int y, int blockType);
 
 private:
