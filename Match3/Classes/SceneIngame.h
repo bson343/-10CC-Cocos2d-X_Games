@@ -38,7 +38,7 @@ public:
 	void dropBlocks(int x);
 	void dropBlocks();
 
-	void confirmMatch3Over(int x, int y);
+	void evalMatch3Over(int x, int y);
 
 	int checkSameBlock(int x, int y, int blockType);
 	int checkSameBlockRecursive(int x, int y, int blockType);

@@ -91,7 +91,7 @@ bool SceneIngame::onTouchBeganTest(Touch* t, Event* e)
 
     CCLOG("%f, %f", p.x, p.y);
 
-    confirmMatch3Over(p.x, p.y);
+    evalMatch3Over(p.x, p.y);
 
     //dropBlocks();
     //fullFillEmptyBlocks();
@@ -208,7 +208,7 @@ void SceneIngame::dropBlocks(int x)
             filledBlockSprite->runAction(
                 Sequence::create(
                     MoveTo::create(0.125f, convertBlockCoordToGameCoord(Vec2(x, empty_y))),
-                    CallFunc::create([=]() { confirmMatch3Over(x, empty_y); }),
+                    CallFunc::create([=]() { evalMatch3Over(x, empty_y); }),
                     nullptr
                 )
             );
@@ -226,7 +226,7 @@ void SceneIngame::dropBlocks()
     }
 }
 
-void SceneIngame::confirmMatch3Over(int x, int y)
+void SceneIngame::evalMatch3Over(int x, int y)
 {
     int comfirmBlockType = getBlockData(x, y);
     int matchCount = 0;
