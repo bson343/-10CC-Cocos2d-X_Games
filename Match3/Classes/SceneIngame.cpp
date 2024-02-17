@@ -27,6 +27,12 @@ bool SceneIngame::init()
     touch->onTouchEnded = std::bind(&SceneIngame::onTouchEnded, this, std::placeholders::_1, std::placeholders::_2);
     touch->onTouchCancelled = touch->onTouchEnded;
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(touch, this);
+
+    auto keyInput = EventListenerKeyboard::create();
+    keyInput->onKeyPressed = CC_CALLBACK_2(SceneIngame::onKeyPressed, this);
+    keyInput->onKeyReleased = CC_CALLBACK_2(SceneIngame::onKeyReleased, this);
+    getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyInput, this);
+
     return true;
 }
 
@@ -101,6 +107,20 @@ void SceneIngame::onTouchEnded(Touch* t, Event* e)
 {
 }
 
+void SceneIngame::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
+{
+    switch (keyCode)
+    {
+    case EventKeyboard::KeyCode::KEY_R:
+        restartGame();
+        break;
+    }
+}
+
+void SceneIngame::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
+{
+}
+
 void SceneIngame::startGame()
 {
 }
@@ -115,6 +135,13 @@ void SceneIngame::winGame()
 
 void SceneIngame::loseGame()
 {
+}
+
+void SceneIngame::restartGame()
+{
+    clearBlockData();
+    clearBlockSprite();
+    initGame();
 }
 
 int SceneIngame::findEmptyBlockYIndex(int x, int y)
@@ -272,6 +299,17 @@ void SceneIngame::setBlockData(int x, int y, int type)
     blockData[y][x] = type;
 }
 
+void SceneIngame::clearBlockData()
+{
+    for (int i = 0; i < BLOCK_HORIZONTAL; i++)
+    {
+        for (int k = 0; k < BLOCK_VERTICAL; k++)
+        {
+            blockData[k][i] = 0;
+        }
+    }
+}
+
 Sprite* SceneIngame::getBlockSprite(int x, int y)
 {
     return blockSprite[y][x];
@@ -280,6 +318,24 @@ Sprite* SceneIngame::getBlockSprite(int x, int y)
 void SceneIngame::setBlockSprite(int x, int y, Sprite* s)
 {
     blockSprite[y][x] = s;
+}
+
+void SceneIngame::clearBlockSprite()
+{
+
+    for (int i = 0; i < BLOCK_HORIZONTAL; i++)
+    {
+        for (int k = 0; k < BLOCK_VERTICAL; k++)
+        {
+            auto s = getBlockSprite(i, k);
+            if (s == nullptr)
+                continue;
+
+            s->removeFromParent();
+            setBlockSprite(i, k, nullptr);
+        }
+    }
+    
 }
 
 void SceneIngame::destroyBlock(int x, int y)

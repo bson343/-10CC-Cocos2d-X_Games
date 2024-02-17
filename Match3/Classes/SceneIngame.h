@@ -24,10 +24,14 @@ public:
 	void onTouchMoved(Touch* t, Event* e);
 	void onTouchEnded(Touch* t, Event* e);
 
+	virtual void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+	virtual void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+
 	void startGame();
 	void pauseGame();
 	void winGame();
 	void loseGame();
+	void restartGame();
 	
 	int findEmptyBlockYIndex(int x, int y);
 	int findFilledBlockYIndex(int x, int y);
@@ -51,12 +55,12 @@ private:
 
 	int getBlockData(int x, int y);
 	void setBlockData(int x, int y, int type);
+	void clearBlockData();
 	
-
 	Sprite* getBlockSprite(int x, int y);
 	void setBlockSprite(int x, int y, Sprite* s);
+	void clearBlockSprite();
 	
-
 	void destroyBlock(int x, int y);
 
 	Vec2 convertGameCoordToBlockCoord(Vec2 gameCoord);
