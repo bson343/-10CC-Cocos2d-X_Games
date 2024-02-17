@@ -26,9 +26,7 @@ bool SceneIngame::init()
     touch->onTouchMoved = std::bind(&SceneIngame::onTouchMoved, this, std::placeholders::_1, std::placeholders::_2);
     touch->onTouchEnded = std::bind(&SceneIngame::onTouchEnded, this, std::placeholders::_1, std::placeholders::_2);
     touch->onTouchCancelled = touch->onTouchEnded;
-
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(touch, this);
-
     return true;
 }
 
@@ -87,13 +85,11 @@ bool SceneIngame::onTouchBeganTest(Touch* t, Event* e)
 
     CCLOG("%f, %f", p.x, p.y);
 
-    if (confirmMatch3Over(p.x, p.y))
-        destroyBlocksForCheckedList();
+    confirmMatch3Over(p.x, p.y);
 
-    dropBlocks();
-    fullFillEmptyBlocks();
+    //dropBlocks();
+    //fullFillEmptyBlocks();
 
-    alignBlockSprite();
     return true;
 }
 
@@ -181,6 +177,15 @@ void SceneIngame::dropBlocks(int x)
 
             setBlockSprite(x, empty_y, filledBlockSprite);
             setBlockSprite(x, filled_y, emptyBlockSprite);
+
+            filledBlockSprite->runAction(
+                Sequence::create(
+                    MoveTo::create(0.125f, convertBlockCoordToGameCoord(Vec2(x, empty_y))),
+                    CallFunc::create([=]() { confirmMatch3Over(x, empty_y); }),
+                    nullptr
+                )
+            );
+
         }
     }
     //alignBlockSprite();
@@ -194,43 +199,45 @@ void SceneIngame::dropBlocks()
     }
 }
 
-bool SceneIngame::confirmMatch3Over(int x, int y)
+void SceneIngame::confirmMatch3Over(int x, int y)
 {
     int comfirmBlockType = getBlockData(x, y);
-    
-    checkSameBlock(x, y, comfirmBlockType);
+    int matchCount = 0;
 
-    if (!isMatch3())
+    matchCount = checkSameBlock(x, y, comfirmBlockType);
+
+    if (matchCount < 3)
     {
         clearCheckedList();
-        return false;
-    }
-
-    return true;
-}
-
-
-void SceneIngame::checkSameBlock(int x, int y, int blockType)
-{
-    clearCheckedList();
-    checkSameBlockRecursive(x, y, blockType);
-}
-
-void SceneIngame::checkSameBlockRecursive(int x, int y, int blockType)
-{
-    if (!(x >= 0 && x < BLOCK_HORIZONTAL) || !(y >= 0 && y < BLOCK_VERTICAL))
-    {
         return;
     }
 
+    destroyBlocksForCheckedList();
+}
+
+
+int SceneIngame::checkSameBlock(int x, int y, int blockType)
+{
+    clearCheckedList();
+    return checkSameBlockRecursive(x, y, blockType);
+}
+
+int SceneIngame::checkSameBlockRecursive(int x, int y, int blockType)
+{
+    if (!(x >= 0 && x < BLOCK_HORIZONTAL) || !(y >= 0 && y < BLOCK_VERTICAL))
+    {
+        return 0;
+    }
+
     if (getBlockData(x, y) != blockType || getCheckedList(x, y) != 0)
-        return ;
+        return 0;
 
     checkCheckedList(x, y);
 
-    checkSameBlockRecursive(x - 1, y, blockType);
-    checkSameBlockRecursive(x + 1, y, blockType);
-    checkSameBlockRecursive(x, y - 1, blockType);
+    return 1 +
+    checkSameBlockRecursive(x - 1, y, blockType) +
+    checkSameBlockRecursive(x + 1, y, blockType) +
+    checkSameBlockRecursive(x, y - 1, blockType) +
     checkSameBlockRecursive(x, y + 1, blockType);
 }
 
@@ -291,8 +298,17 @@ void SceneIngame::destroyBlock(int x, int y)
             nullptr
         )
     );
+
     blockSprite[y][x] = nullptr;
     blockData[y][x] = 0;
+
+    this->runAction(
+        Sequence::create(
+            DelayTime::create(0.625f),
+            CallFunc::create([=]() {dropBlocks(x); }),
+            nullptr
+        )
+    );
 }
 
 //게임 좌표계: 해상도

@@ -28,16 +28,16 @@ public:
 	void pauseGame();
 	void winGame();
 	void loseGame();
-
+	
 	int findEmptyBlockYIndex(int x, int y);
 	int findFilledBlockYIndex(int x, int y);
 	void dropBlocks(int x);
 	void dropBlocks();
 
-	bool confirmMatch3Over(int x, int y);
+	void confirmMatch3Over(int x, int y);
 
-	void checkSameBlock(int x, int y, int blockType);
-	void checkSameBlockRecursive(int x, int y, int blockType);
+	int checkSameBlock(int x, int y, int blockType);
+	int checkSameBlockRecursive(int x, int y, int blockType);
 
 private:
 	GameState state;
@@ -48,10 +48,15 @@ private:
 
 	void createBlock(int x, int y, int type);
 	void createBlockRand(int x, int y);
+
 	int getBlockData(int x, int y);
 	void setBlockData(int x, int y, int type);
+	
+
 	Sprite* getBlockSprite(int x, int y);
 	void setBlockSprite(int x, int y, Sprite* s);
+	
+
 	void destroyBlock(int x, int y);
 
 	Vec2 convertGameCoordToBlockCoord(Vec2 gameCoord);
