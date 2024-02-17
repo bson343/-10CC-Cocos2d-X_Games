@@ -16,6 +16,8 @@ bool SceneIngame::init()
 {
     if (!Scene::init()) return false;
 
+    callbackCount = 0;
+
     srand(time(0));
 
     Director::getInstance()->getTextureCache()->addImage("res/match3_tiles_px.png");
@@ -87,11 +89,16 @@ void SceneIngame::alignBlockSprite()
 
 bool SceneIngame::onTouchBeganTest(Touch* t, Event* e)
 {
+    if (state != GameState::PLAYING)
+    {
+        return true;
+    }
+
     Vec2 p = convertGameCoordToBlockCoord(t->getLocation());
 
     CCLOG("%f, %f", p.x, p.y);
 
-    evalMatch3Over(p.x, p.y);
+    destroyBlock(p.x, p.y);
 
     //dropBlocks();
     //fullFillEmptyBlocks();
@@ -144,6 +151,21 @@ void SceneIngame::restartGame()
     initGame();
 }
 
+void SceneIngame::startBlockMoving()
+{
+    state = GameState::BLOCK_MOVING;
+    increaseCallbackCount();
+}
+
+void SceneIngame::tryEndBlockMoving()
+{
+    CCLOG("%d", callbackCount);
+    if (isLastCallback())
+    {
+        state = GameState::PLAYING;
+    }
+}
+
 int SceneIngame::findEmptyBlockYIndex(int x, int y)
 {
     for (int i = y; i < BLOCK_VERTICAL; i++)
@@ -174,6 +196,8 @@ int SceneIngame::findFilledBlockYIndex(int x, int y)
 
 void SceneIngame::dropBlocks(int x)
 {
+    decreaseCallbackCount();
+
     for (int i = 0; i < BLOCK_VERTICAL; i++)
     {
         auto empty_y = findEmptyBlockYIndex(x, i);
@@ -212,10 +236,10 @@ void SceneIngame::dropBlocks(int x)
                     nullptr
                 )
             );
-
+            increaseCallbackCount();
         }
     }
-    //alignBlockSprite();
+    tryEndBlockMoving();
 }
 
 void SceneIngame::dropBlocks()
@@ -231,11 +255,16 @@ void SceneIngame::evalMatch3Over(int x, int y)
     int comfirmBlockType = getBlockData(x, y);
     int matchCount = 0;
 
+    decreaseCallbackCount();
+
     matchCount = checkSameBlock(x, y, comfirmBlockType);
 
     if (matchCount < 3)
     {
         clearCheckedList();
+
+        tryEndBlockMoving();
+
         return;
     }
 
@@ -342,6 +371,8 @@ void SceneIngame::destroyBlock(int x, int y)
 {
     if (blockData[y][x] == 0)
         return;
+
+    startBlockMoving();
 
     blockSprite[y][x]->runAction(
         Sequence::create(
@@ -474,4 +505,20 @@ void SceneIngame::fullFillEmptyBlocks()
                 createBlockRand(x, y);
         }
     }
+}
+
+bool SceneIngame::isLastCallback()
+{
+    if (callbackCount == 0) return true;
+    return false;
+}
+
+void SceneIngame::increaseCallbackCount()
+{
+    callbackCount++;
+}
+
+void SceneIngame::decreaseCallbackCount()
+{
+    callbackCount--;
 }

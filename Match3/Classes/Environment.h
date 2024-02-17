@@ -8,7 +8,8 @@ enum class GameState
 	PLAYING,
 	PAUSE,
 	WIN,
-	LOSE
+	LOSE,
+	BLOCK_MOVING
 };
 
 #define BLOCK_HORIZONTAL 7 //°¡·Î·Î 7Ä­

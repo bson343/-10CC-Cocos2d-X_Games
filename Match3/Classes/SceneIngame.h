@@ -32,6 +32,9 @@ public:
 	void winGame();
 	void loseGame();
 	void restartGame();
+
+	void startBlockMoving();
+	void tryEndBlockMoving();
 	
 	int findEmptyBlockYIndex(int x, int y);
 	int findFilledBlockYIndex(int x, int y);
@@ -49,6 +52,8 @@ private:
 	Sprite* blockSprite[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
 
 	int blockCheckedList[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
+
+	int callbackCount;
 
 	void createBlock(int x, int y, int type);
 	void createBlockRand(int x, int y);
@@ -73,6 +78,10 @@ private:
 	void destroyBlocksForCheckedList();
 
 	void fullFillEmptyBlocks();
+
+	bool isLastCallback();
+	void increaseCallbackCount();
+	void decreaseCallbackCount();
 };
 #endif // !__SCENE_INGAME_H__
 
