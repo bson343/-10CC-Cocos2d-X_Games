@@ -17,5 +17,6 @@ enum class GameState
 #define BLOCK_OFFSET Vec2(360/2, 480/2) //기준 정중앙
 #define BLOCK_WIDTH 40 //블록 너비는 40픽셀
 #define BLOCK_HEIGHT 40 //블록 높이는 40픽셀
+#define BLOCK_VAR 4 // 블록 애셋 갯수
 
 #endif // !__ENVIRONMENT_H__
