@@ -57,7 +57,7 @@ void SceneIngame::initGame()
     {
         for (int k = 0; k < BLOCK_VERTICAL; k++)
         {
-            createBlock(i, k, rand() % 4 + 1);
+            createBlock(i, k, rand() % BLOCK_VAR + 1);
         }
     }
     this->alignBlockSprite();
@@ -95,6 +95,11 @@ bool SceneIngame::onTouchBeganTest(Touch* t, Event* e)
     }
 
     Vec2 p = convertGameCoordToBlockCoord(t->getLocation());
+
+    if (!(p.x >= 0 && p.x < BLOCK_HORIZONTAL) || !(p.y >= 0 && p.y < BLOCK_VERTICAL))
+    {
+        return true;
+    }
 
     CCLOG("%f, %f", p.x, p.y);
 
@@ -309,7 +314,7 @@ void SceneIngame::createBlock(int x, int y, int type)
 
 void SceneIngame::createBlockRand(int x, int y)
 {
-    int type = rand() % 4 + 1;
+    int type = rand() % BLOCK_VAR + 1;
     auto cache = Director::getInstance()->getTextureCache();
     auto spr = Sprite::createWithTexture(cache->getTextureForKey("res/match3_tiles_px.png"), Rect(0 + (type * 40), 0, 40, 40));
     //spr->setScale(2);
