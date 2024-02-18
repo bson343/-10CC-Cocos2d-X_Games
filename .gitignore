@@ -396,3 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#Custom Path
+
+#cocos2d-x target machin build path
+Win32-Build/
