@@ -400,4 +400,4 @@ FodyWeavers.xsd
 #Custom Path
 
 #cocos2d-x target machin build path
-Win32-Build/
+*/Win32-Build/
