@@ -4,6 +4,7 @@
 #include "stdafx.h"
 
 #include "Environment.h"
+#include "LayerIngameUI.h"
 
 class SceneIngame : public Scene 
 {
@@ -47,6 +48,8 @@ public:
 	int checkSameBlockRecursive(int x, int y, int blockType);
 
 private:
+	LayerIngameUI* ui;
+
 	GameState state;
 	int blockData[BLOCK_VERTICAL][BLOCK_HORIZONTAL];
 	Sprite* blockSprite[BLOCK_VERTICAL][BLOCK_HORIZONTAL];

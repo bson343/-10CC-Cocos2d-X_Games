@@ -47,6 +47,7 @@ void SceneIngame::onEnter()
 
 void SceneIngame::initUI()
 {
+    addChild(ui = LayerIngameUI::create());
 }
 
 void SceneIngame::initGame()
