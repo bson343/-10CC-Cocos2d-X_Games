@@ -806,12 +806,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\Environment.h" />
+    <ClInclude Include="..\Classes\LayerIngameUI.h" />
     <ClInclude Include="..\Classes\SceneIngame.h" />
     <ClInclude Include="..\Classes\stdafx.h" />
     <ClInclude Include="C:\Users\SonByeongguk\WT\Cocos2d-x 10CloneCoding(10CC)\Match3\Classes\AppDelegate.h" />
     <ClInclude Include="C:\Users\SonByeongguk\WT\Cocos2d-x 10CloneCoding(10CC)\Match3\Classes\HelloWorldScene.h" />
     <ClInclude Include="C:\Users\SonByeongguk\WT\Cocos2d-x 10CloneCoding(10CC)\Match3\proj.win32\main.h" />
     <ClInclude Include="C:\Users\SonByeongguk\WT\Cocos2d-x 10CloneCoding(10CC)\Match3\proj.win32\resource.h" />
+    <ClCompile Include="..\Classes\LayerIngameUI.cpp" />
     <ClCompile Include="..\Classes\SceneIngame.cpp" />
     <ClCompile Include="..\Classes\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
