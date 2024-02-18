@@ -16,8 +16,6 @@ bool SceneIngame::init()
 {
     if (!Scene::init()) return false;
 
-    callbackCount = 0;
-
     srand(time(0));
 
     Director::getInstance()->getTextureCache()->addImage("res/match3_tiles_px.png");
@@ -53,6 +51,9 @@ void SceneIngame::initUI()
 
 void SceneIngame::initGame()
 {
+
+    initGameField();
+
     for (int i = 0; i < BLOCK_HORIZONTAL; i++)
     {
         for (int k = 0; k < BLOCK_VERTICAL; k++)
@@ -269,7 +270,7 @@ void SceneIngame::evalMatch3Over(int x, int y)
 
     matchCount = checkSameBlock(x, y, comfirmBlockType);
 
-    if (matchCount < 3)
+    if (isMatch3())
     {
         clearCheckedList();
 
@@ -459,7 +460,7 @@ int SceneIngame::getCheckedList(int x, int y)
     return blockCheckedList[y][x];
 }
 
-int SceneIngame::isMatch3()
+bool SceneIngame::isMatch3()
 {
     int count = 0;
     
@@ -474,7 +475,7 @@ int SceneIngame::isMatch3()
         }
 
         if (count >= 3)
-            return 1;
+            return true;
     }
 
     for (int y = 0; y < BLOCK_VERTICAL; y++)
@@ -488,9 +489,9 @@ int SceneIngame::isMatch3()
         }
 
         if (count >= 3)
-            return 1;
+            return true;
     }
-    return 0;
+    return false;
 }
 
 void SceneIngame::destroyBlocksForCheckedList()
@@ -532,3 +533,13 @@ void SceneIngame::decreaseCallbackCount()
 {
     callbackCount--;
 }
+
+void SceneIngame::initGameField()
+{
+    callbackCount = 0;
+
+    clearCheckedList();
+    clearBlockSprite();
+    clearBlockData();
+}
+

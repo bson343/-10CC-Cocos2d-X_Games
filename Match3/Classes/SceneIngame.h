@@ -74,7 +74,7 @@ private:
 	void clearCheckedList();
 	void checkCheckedList(int x, int y);
 	int getCheckedList(int x, int y);
-	int isMatch3();
+	bool isMatch3();
 	void destroyBlocksForCheckedList();
 
 	void fullFillEmptyBlocks();
@@ -82,6 +82,8 @@ private:
 	bool isLastCallback();
 	void increaseCallbackCount();
 	void decreaseCallbackCount();
+
+	void initGameField();
 };
 #endif // !__SCENE_INGAME_H__
 
