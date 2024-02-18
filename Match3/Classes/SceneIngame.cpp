@@ -270,7 +270,7 @@ void SceneIngame::evalMatch3Over(int x, int y)
 
     matchCount = checkSameBlock(x, y, comfirmBlockType);
 
-    if (isMatch3())
+    if (!isMatch3())
     {
         clearCheckedList();
 
@@ -537,6 +537,7 @@ void SceneIngame::decreaseCallbackCount()
 void SceneIngame::initGameField()
 {
     callbackCount = 0;
+    state = GameState::PLAYING;
 
     clearCheckedList();
     clearBlockSprite();
