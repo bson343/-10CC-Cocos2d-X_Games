@@ -216,6 +216,11 @@ void SceneIngame::dropBlocks(int x)
 
         if (filled_y == -1)
         {
+            createBlockRand(x, empty_y);
+            blockSprite[empty_y][x]->setPosition(convertBlockCoordToGameCoord(Vec2(x, BLOCK_VERTICAL + 1)));
+            blockSprite[empty_y][x]->runAction(
+                MoveTo::create(0.125f, convertBlockCoordToGameCoord(Vec2(x, empty_y)))
+            );
             continue;
         }
 
