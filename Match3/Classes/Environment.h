@@ -19,4 +19,7 @@ enum class GameState
 #define BLOCK_HEIGHT 40 //블록 높이는 40픽셀
 #define BLOCK_VAR 4 // 블록 애셋 갯수
 
+#define SCREEN_WIDTH 360
+#define SCREEN_HEIGHT 480
+
 #endif // !__ENVIRONMENT_H__
