@@ -55,14 +55,16 @@ if(APPLE OR WINDOWS)
 endif()
 
 # add cross-platforms source files and header files 
-list(APPEND GAME_SOURCE
-     Classes/AppDelegate.cpp
-     Classes/HelloWorldScene.cpp
-     )
-list(APPEND GAME_HEADER
-     Classes/AppDelegate.h
-     Classes/HelloWorldScene.h
-     )
+file(GLOB GAME_SOURCE "Classes/*.cpp")
+file(GLOB GAME_HEADER "Classes/*.h")
+# list(APPEND GAME_SOURCE
+#      Classes/AppDelegate.cpp
+#      Classes/HelloWorldScene.cpp
+#      )
+# list(APPEND GAME_HEADER
+#      Classes/AppDelegate.h
+#      Classes/HelloWorldScene.h
+#      )
 
 if(ANDROID)
     # change APP_NAME to the share library name for Android, it's value depend on AndroidManifest.xml
