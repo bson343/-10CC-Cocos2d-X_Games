@@ -12,6 +12,7 @@ public:
 	Button* btnResume;
 	Button* btnRestart;
 	Button* btnHome;
+	DrawNode* dnCurtain;
 
 	static LayerIngameUI* create();
 	virtual bool init() override;
