@@ -402,4 +402,4 @@ FodyWeavers.xsd
 #cocos2d-x target machin build path
 */Win32-Build/
 */out/
-*/GeneratorVS-2019-Build.bat
+# */GeneratorVS-2019-Build.bat
