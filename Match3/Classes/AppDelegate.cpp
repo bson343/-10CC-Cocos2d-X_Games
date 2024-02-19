@@ -113,7 +113,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     auto scene = SceneIngame::create();
     
-    //director->getOpenGLView()->setFrameZoomFactor(0.75);
+    director->getOpenGLView()->setFrameZoomFactor(0.75);
 
     // run
     director->runWithScene(scene);

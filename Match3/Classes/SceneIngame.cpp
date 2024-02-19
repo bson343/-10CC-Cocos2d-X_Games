@@ -313,7 +313,7 @@ void SceneIngame::createBlock(int x, int y, int type)
 {
     auto cache = Director::getInstance()->getTextureCache();
     auto spr = Sprite::createWithTexture(cache->getTextureForKey("res/match3_tiles_px.png"), Rect(0 + (type * 40), 0, 40, 40));
-    //spr->setScale(2);
+    spr->setScale(2);
     addChild(spr);
     setBlockData(x, y, type);
     setBlockSprite(x, y, spr);
@@ -324,7 +324,7 @@ void SceneIngame::createBlockRand(int x, int y)
     int type = rand() % BLOCK_VAR + 1;
     auto cache = Director::getInstance()->getTextureCache();
     auto spr = Sprite::createWithTexture(cache->getTextureForKey("res/match3_tiles_px.png"), Rect(0 + (type * 40), 0, 40, 40));
-    //spr->setScale(2);
+    spr->setScale(2);
     addChild(spr);
     setBlockData(x, y, type);
     setBlockSprite(x, y, spr);
