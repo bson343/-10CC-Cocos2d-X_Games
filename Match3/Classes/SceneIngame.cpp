@@ -1,6 +1,5 @@
-
 #include "stdafx.h"
-
+#include "SceneHome.h"
 #include "SceneIngame.h"
 
 
@@ -69,7 +68,11 @@ void SceneIngame::initUI()
     ui->btnRestart->addClickEventListener([=](Ref* r) {
         if (state == GameState::PAUSE)
         {
-            //TODO: 게임 재시작
+            ui->hidePausePanel();
+            ui->setScore(0);
+            this->destroyGame();
+            this->initGame();
+            this->startGame();
             state = GameState::PLAYING;
         }
     });
@@ -77,7 +80,9 @@ void SceneIngame::initUI()
     ui->btnHome->addClickEventListener([=](Ref* r) {
         if (state == GameState::PAUSE)
         {
-            //TODO: 게임 일시정지
+            auto scene = SceneHome::create();
+            auto transit = TransitionSlideInL::create(0.125f, scene);
+            Director::getInstance()->replaceScene(transit);
             state = GameState::PLAYING;
         }
     });
@@ -104,6 +109,15 @@ void SceneIngame::destroyUI()
 
 void SceneIngame::destroyGame()
 {
+    for (int i = 0; i < BLOCK_HORIZONTAL; i++)
+    {
+        for (int j = 0; j < BLOCK_VERTICAL; j++)
+        {
+            setBlockData(i, j, 0);
+            getBlockSprite(i, j)->removeFromParent();
+            setBlockSprite(i, j, nullptr);
+        }
+    }
 }
 
 void SceneIngame::alignBlockSprite()
