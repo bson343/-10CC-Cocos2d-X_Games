@@ -24,5 +24,17 @@ enum class GameState
 
 #define FONT_NAME "fonts/SDSamliphopangcheTTFBasic.ttf"
 
+class Global {
+public:
+	static Global* getInstance();
+
+	void setScore(long long value);
+	long long getScore();
+	void addScore(long long value);
+
+private:
+	Global();
+	long long score = 0;
+};
 
 #endif // !__ENVIRONMENT_H__
