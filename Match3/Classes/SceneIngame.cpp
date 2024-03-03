@@ -216,7 +216,7 @@ void SceneIngame::startBlockMoving()
 
 void SceneIngame::tryEndBlockMoving()
 {
-    CCLOG("%d", callbackCount);
+    //CCLOG("%d", callbackCount);
     if (isLastCallback())
     {
         state = GameState::PLAYING;
@@ -330,6 +330,7 @@ void SceneIngame::evalMatch3Over(int x, int y)
         return;
     }
 
+    CCLOG("test score: %d", matchCount * WEIGHT_SCORE);
     Global::getInstance()->addScore(matchCount * WEIGHT_SCORE);
     ui->setScore(Global::getInstance()->getScore());
 
@@ -339,6 +340,8 @@ void SceneIngame::evalMatch3Over(int x, int y)
 
 int SceneIngame::checkSameBlock(int x, int y, int blockType)
 {
+    if (blockType == 0) return 0;
+
     clearCheckedList();
     return checkSameBlockRecursive(x, y, blockType);
 }
