@@ -22,5 +22,7 @@ enum class GameState
 #define BLOCK_HEIGHT 80 //블록 높이는 픽셀
 #define BLOCK_VAR 4 // 블록 애셋 갯수
 
+#define FONT_NAME "fonts/SDSamliphopangcheTTFBasic.ttf"
+
 
 #endif // !__ENVIRONMENT_H__
