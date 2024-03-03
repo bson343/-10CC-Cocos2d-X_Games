@@ -14,7 +14,7 @@ bool LayerIngameUI::init()
 {
 	if (!Node::init()) return false;
 
-	addChild(lbScore = Label::createWithTTF("init", "fonts/SDSamliphopangcheTTFBasic.ttf", 48.0f));
+	addChild(lbScore = Label::createWithTTF("init", FONT_NAME, 48.0f));
 	lbScore->setAnchorPoint(Vec2::ANCHOR_MIDDLE_LEFT);
 	lbScore->setPosition(Vec2(10, SCREEN_HEIGHT - 150));
 
