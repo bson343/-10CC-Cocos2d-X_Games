@@ -24,6 +24,8 @@ enum class GameState
 
 #define FONT_NAME "fonts/SDSamliphopangcheTTFBasic.ttf"
 
+#define WEIGHT_SCORE 10 // 스코어 가중치
+
 class Global {
 public:
 	static Global* getInstance();
