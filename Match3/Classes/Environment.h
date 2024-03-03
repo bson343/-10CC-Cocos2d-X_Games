@@ -35,7 +35,7 @@ public:
 	void addScore(long long value);
 
 private:
-	Global();
+	Global() {};
 	long long score = 0;
 };
 
