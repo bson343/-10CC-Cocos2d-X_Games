@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "SceneHome.h"
 #include "SceneIngame.h"
+#include "Environment.h"
 
 
 SceneIngame* SceneIngame::create()
@@ -90,8 +91,10 @@ void SceneIngame::initUI()
 
 void SceneIngame::initGame()
 {
-
     initGameField();
+
+    Global::getInstance()->setScore(0);
+    ui->setScore(Global::getInstance()->getScore());
 
     for (int i = 0; i < BLOCK_HORIZONTAL; i++)
     {
@@ -326,6 +329,9 @@ void SceneIngame::evalMatch3Over(int x, int y)
 
         return;
     }
+
+    Global::getInstance()->addScore(matchCount * WEIGHT_SCORE);
+    ui->setScore(Global::getInstance()->getScore());
 
     destroyBlocksForCheckedList();
 }
